@@ -14,9 +14,13 @@ namespace BookWorm.Data
             this.context = new BookContext();
         }
 
-        public Book Add(Book entity)
+        public int Add(Book entity)
         {
-            return context.Books.Add(entity).Entity;
+            try
+            {
+                return context.Books.Add(entity).Entity.Id;
+            }
+            catch { return -1; }
         }
 
         public IEnumerable<Book> All()
@@ -24,11 +28,15 @@ namespace BookWorm.Data
             return context.Books.ToList();
         }
 
-        public Book Delete(int id)
+        public bool Delete(int id)
         {
-            var book = context.Find<Book>(id);
-            context.Books.Remove(book);
-            return book;
+            try
+            {
+                var book = context.Find<Book>(id);
+                context.Books.Remove(book);
+                return true;
+            }
+            catch { return false; }
         }
 
         public IEnumerable<Book> Find(Expression<Func<Book, bool>> predicate)
@@ -46,9 +54,13 @@ namespace BookWorm.Data
             context.SaveChanges();
         }
 
-        public Book Update(Book entity)
+        public int Update(Book entity)
         {
-            return context.Update(entity).Entity;
+            try
+            {
+                return context.Update(entity).Entity.Id;
+            }
+            catch { return -1; }
         }
     }
 }

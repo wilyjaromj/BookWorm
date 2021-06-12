@@ -434,3 +434,14 @@ C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\AddEditBook.cshtm
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\Search.cshtml.g.cs
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\SearchResults.cshtml.g.cs
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\_BookTable.cshtml.g.cs
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\Antlr3.Runtime.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\Iesi.Collections.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\NHibernate.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\Remotion.Linq.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\Remotion.Linq.EagerFetching.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\dev\BookWorm\BookWorm.Web\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

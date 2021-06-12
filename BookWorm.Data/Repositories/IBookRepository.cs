@@ -6,10 +6,10 @@ namespace BookWorm.Data
 {
     public interface IBookRepository
     {
-        Book Add(Book entity);
-        Book Update(Book entity);
+        int Add(Book entity);
+        int Update(Book entity);
         Book Get(int id);
-        Book Delete(int id);
+        bool Delete(int id);
         IEnumerable<Book> All();
         IEnumerable<Book> Find(Expression<Func<Book, bool>> predicate);
         void SaveChanges();

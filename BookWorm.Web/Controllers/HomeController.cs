@@ -83,16 +83,29 @@ namespace BookWorm.Web.Controllers
             }         
 
             var result = book.Id > 0 ? bookRepository.Update(book) : bookRepository.Add(book);
-            bookRepository.SaveChanges();
+            if (result > -1)
+            {
+                bookRepository.SaveChanges();
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }            
 
-            return RedirectToAction("Book", new { id = result.Id });
+            return RedirectToAction("Book", new { id = book.Id });
         }
 
         [HttpPost]
         public IActionResult DeleteBook(int id)
         {
-            var deleted = bookRepository.Delete(id);
-            bookRepository.SaveChanges();
+            if (bookRepository.Delete(id))
+            {
+                bookRepository.SaveChanges();
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }            
 
             return RedirectToAction("Index");
         }
