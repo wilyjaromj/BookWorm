@@ -27,7 +27,7 @@
 </div>
 <hr />
 <div class="col-12">
-    <div class="row justify-content-around">
+    <div class="row mx-0 justify-content-between">
         <img src="@imgSrc" height="200" />
         <div>
             <strong>Author:</strong> @Model.Author
@@ -51,26 +51,25 @@
 <br />
 @if (showAuthorTable || showSeriesTable)
 {
-    <div class="col-12">
-        <h3>Related Books</h3>
-        <hr />
-        <div class="row mx-0">
-            @if (showAuthorTable)
-            {
-                <div class="col-6" id="sameAuthor">
-                    <h5>Books with the same author</h5>
-                    <br />
-                    <partial name="_BookTable" model="relatedBooks.Where(m => m.Author == ViewBag.Author)" />
-                </div>
-            }
-            @if (showSeriesTable)
-            {
-                <div class="col-6" id="sameSeries">
-                    <h5>Books in the same series</h5>
-                    <br />
-                    <partial name="_BookTable" model="relatedBooks.Where(m => m.Series == ViewBag.Series)" />
-                </div>
-            }
+<div class="col-12">
+    <h3>Related Books</h3>
+    <hr />
+    @if (showAuthorTable)
+    {
+        <div id="sameAuthor">
+            <h5>Books with the same author</h5>
+            <br />
+            <partial name="_BookTable" model="relatedBooks.Where(m => m.Author == Model.Author)" />
         </div>
-    </div>
+        <br />
+    }
+    @if (showSeriesTable)
+    {
+        <div id="sameSeries">
+            <h5>Books in the same series</h5>
+            <br />
+            <partial name="_BookTable" model="relatedBooks.Where(m => m.Series == Model.Series)" />
+        </div>
+    }
+</div>
 }

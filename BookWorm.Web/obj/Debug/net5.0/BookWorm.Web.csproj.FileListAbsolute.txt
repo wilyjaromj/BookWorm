@@ -371,7 +371,6 @@ C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\BookWorm.Web.TagHelpers.input.cach
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\BookWorm.Web.TagHelpers.output.cache
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\BookWorm.Web.RazorCoreGenerate.cache
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\dev\BookWorm\BookWorm.Web\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

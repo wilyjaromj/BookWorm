@@ -31,7 +31,7 @@ namespace BookWorm.Web.Controllers
             var model = bookRepository.Get(id);
 
             List<Book> relatedBooks = GetRelatedBooks(id, model.Author, model.Series);
-            ViewBag.ShowAuthor = !string.IsNullOrWhiteSpace(model.Author) && relatedBooks.Any(b => b.Author ==model.Author);
+            ViewBag.ShowAuthor = !string.IsNullOrWhiteSpace(model.Author) && relatedBooks.Any(b => b.Author == model.Author);
             ViewBag.ShowSeries = !string.IsNullOrWhiteSpace(model.Series) && relatedBooks.Any(b => b.Series == model.Series);
             ViewBag.RelatedBooks = relatedBooks;
 
