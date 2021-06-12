@@ -1,0 +1,60 @@
+﻿@using BookWorm.Data
+@model Book
+@{
+    ViewData["Title"] = Model.Id > 0 ? "Edit Book" : "Add Book";
+    var ratings = (List<SelectListItem>)ViewBag.Ratings;
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<form asp-controller="Home" asp-action="AddEditBook" method="post" enctype="multipart/form-data">
+    <input asp-for="Id" type="hidden" />
+    <input asp-for="CoverArt" type="hidden" />
+    <div class="row mx-0">
+        <div class="col-2">
+            <label asp-for="Title"></label>
+        </div>
+        <div class="col-9">
+            <input class="form-control" asp-for="Title" />
+        </div>
+    </div>
+    <br />
+    <div class="row mx-0">
+        <div class="col-2">
+            <label asp-for="Author"></label>
+        </div>
+        <div class="col-9">
+            <input class="form-control" asp-for="Author" />
+        </div>
+    </div>
+    <br />
+    <div class="row mx-0">
+        <div class="col-2">
+            <label asp-for="Rating"></label>
+        </div>
+        <div class="col-9">
+            <select class="form-control" asp-for="Rating" asp-items="ratings"></select>
+        </div>
+    </div>
+    <br />
+    <div class="row mx-0">
+        <div class="col-2">
+            <label asp-for="Description"></label>
+        </div>
+        <div class="col-9">
+            <textarea class="form-control" style="height:150px;" asp-for="Description"></textarea>
+        </div>
+    </div>
+    <br />
+    <div class="row mx-0">
+        <div class="col-2">
+            <label>Cover Art</label>
+        </div>
+        <div class="col-9">
+            <input name="file" type="file" />
+        </div>
+    </div>
+    <hr />
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+

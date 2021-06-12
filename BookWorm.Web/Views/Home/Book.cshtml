@@ -1,0 +1,76 @@
+﻿@using BookWorm.Data
+@model Book
+@{
+    ViewData["Title"] = "Book";
+
+    string base64;
+    var imgSrc = "/images/placeholder.png";
+    if (Model.CoverArt != null)
+    {
+        base64 = Convert.ToBase64String(Model.CoverArt);
+        imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
+    var showAuthorTable = (bool)ViewBag.ShowAuthor;
+    var showSeriesTable = (bool)ViewBag.ShowSeries;
+    var relatedBooks = (List<Book>)ViewBag.RelatedBooks;
+}
+
+<div class="row justify-content-between">
+    <h1>@Model.Title</h1>
+    <div class="row mx-0">
+        <a class="btn btn-primary mr-3" style="max-height:38px;" asp-area="" asp-controller="Home" asp-action="AddEditBook" asp-route-id="@Model.Id">Edit Book</a>
+        <form asp-action="DeleteBook" asp-controller="Home" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button class="btn btn-danger" type="submit">Delete Book</button>
+        </form>
+    </div>
+</div>
+<hr />
+<div class="col-12">
+    <div class="row justify-content-around">
+        <img src="@imgSrc" height="200" />
+        <div>
+            <strong>Author:</strong> @Model.Author
+        </div>
+        <div>
+            <strong>Rating:</strong> @Model.Rating
+        </div>
+        @if (!string.IsNullOrWhiteSpace(Model.Series))
+        {
+            <div>
+                <strong>Series:</strong> @Model.Series
+            </div>
+        }
+    </div>
+    <br />
+    <strong>Description:</strong>
+    <p>
+        @Model.Description
+    </p>
+</div>
+<br />
+@if (showAuthorTable || showSeriesTable)
+{
+    <div class="col-12">
+        <h3>Related Books</h3>
+        <hr />
+        <div class="row mx-0">
+            @if (showAuthorTable)
+            {
+                <div class="col-6" id="sameAuthor">
+                    <h5>Books with the same author</h5>
+                    <br />
+                    <partial name="_BookTable" model="relatedBooks.Where(m => m.Author == ViewBag.Author)" />
+                </div>
+            }
+            @if (showSeriesTable)
+            {
+                <div class="col-6" id="sameSeries">
+                    <h5>Books in the same series</h5>
+                    <br />
+                    <partial name="_BookTable" model="relatedBooks.Where(m => m.Series == ViewBag.Series)" />
+                </div>
+            }
+        </div>
+    </div>
+}

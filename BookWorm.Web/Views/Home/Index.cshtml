@@ -1,0 +1,10 @@
+﻿@using BookWorm.Data
+@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "My Books";
+}
+
+<h1>My Books</h1>
+<hr />
+
+<partial name="_BookTable" model="Model" />

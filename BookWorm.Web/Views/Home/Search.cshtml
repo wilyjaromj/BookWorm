@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Search Books";
+}
+
+<h1>Search for Books</h1>
+<hr />
+<br />
+<form asp-controller="Home" asp-action="SearchResults" method="get">
+    <div class="row mx-0 justify-content-around">
+        <h5>Search By:</h5>
+        <label><input name="type" value="0" type="radio" />Title</label>
+        <label><input name="type" value="1" type="radio" />Author</label>
+        <label><input name="type" value="2" type="radio" />Rating</label>
+        <label><input name="type" value="3" type="radio" />Series</label>
+    </div>
+    <br /><br />
+    <div id="ratingSelect" style="display:none;">
+        <strong>Rating</strong>
+        <select name="rating" id="rating" class="form-control">
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+    </div>
+    <div id="textSearch">
+        <strong>Criteria</strong>
+        <input name="searchParameter" type="text" class="form-control" />
+    </div>
+    
+    <br /><br />
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+@section Scripts {
+    <script type="text/javascript">
+        $('input[name="type"]').on('change', function () {
+            if ($('input[name="type"]:checked').val() === '2') {
+                $('#textSearch').hide();
+                $('#ratingSelect').show();
+            } else {
+                $('#ratingSelect').hide();
+                $('#textSearch').show();
+            }
+        });
+    </script>
+}

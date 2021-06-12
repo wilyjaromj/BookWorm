@@ -1,0 +1,12 @@
+C:\dev\BookWorm\BookWorm.Data\bin\Debug\net5.0\BookWorm.Data.deps.json
+C:\dev\BookWorm\BookWorm.Data\bin\Debug\net5.0\BookWorm.Data.dll
+C:\dev\BookWorm\BookWorm.Data\bin\Debug\net5.0\ref\BookWorm.Data.dll
+C:\dev\BookWorm\BookWorm.Data\bin\Debug\net5.0\BookWorm.Data.pdb
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.csproj.AssemblyReference.cache
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.AssemblyInfoInputs.cache
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.AssemblyInfo.cs
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.csproj.CoreCompileInputs.cache
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.dll
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\ref\BookWorm.Data.dll
+C:\dev\BookWorm\BookWorm.Data\obj\Debug\net5.0\BookWorm.Data.pdb
