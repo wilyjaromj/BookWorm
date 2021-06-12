@@ -37,7 +37,6 @@ namespace BookWorm.Web.Controllers
 
             return View(model);
         }
-
         
         private List<Book> GetRelatedBooks(int id, string author, string series)
         {
@@ -78,6 +77,11 @@ namespace BookWorm.Web.Controllers
                 }
             }
 
+            if (!ModelState.IsValid)
+            {
+                return View(book);
+            }         
+
             var result = book.Id > 0 ? bookRepository.Update(book) : bookRepository.Add(book);
             bookRepository.SaveChanges();
 
@@ -102,6 +106,11 @@ namespace BookWorm.Web.Controllers
         [HttpGet]
         public IActionResult SearchResults(string searchParameter, int rating, SearchTypes type)
         {
+            if (string.IsNullOrWhiteSpace(searchParameter))
+            {
+                return RedirectToAction("Search");
+            }
+
             IEnumerable<Book> results = new List<Book>();
             switch (type)
             {
@@ -120,11 +129,6 @@ namespace BookWorm.Web.Controllers
             }
 
             return View(results);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

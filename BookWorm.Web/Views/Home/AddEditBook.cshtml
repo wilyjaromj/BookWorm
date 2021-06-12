@@ -15,6 +15,7 @@
             <label asp-for="Title"></label>
         </div>
         <div class="col-9">
+            <span asp-validation-for="Title" class="text-danger"></span>
             <input class="form-control" asp-for="Title" />
         </div>
     </div>
@@ -24,6 +25,7 @@
             <label asp-for="Author"></label>
         </div>
         <div class="col-9">
+            <span asp-validation-for="Author" class="text-danger"></span>
             <input class="form-control" asp-for="Author" />
         </div>
     </div>
@@ -39,9 +41,20 @@
     <br />
     <div class="row mx-0">
         <div class="col-2">
+            <label asp-for="Series"></label>
+        </div>
+        <div class="col-9">
+            <span asp-validation-for="Series" class="text-danger"></span>
+            <input class="form-control" asp-for="Series" />
+        </div>
+    </div>
+    <br />
+    <div class="row mx-0">
+        <div class="col-2">
             <label asp-for="Description"></label>
         </div>
         <div class="col-9">
+            <span asp-validation-for="Description" class="text-danger"></span>
             <textarea class="form-control" style="height:150px;" asp-for="Description"></textarea>
         </div>
     </div>
@@ -58,3 +71,6 @@
     <button class="btn btn-success" type="submit">Submit</button>
 </form>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
