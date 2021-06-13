@@ -69,3 +69,23 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.thead-dark th {
+    background-color: #3D2C2E !important;
+}
+
+.btn-danger {
+    background-color: #BA274A !important;
+}
+
+    .btn-danger:hover {
+        background-color: #941F3B !important;
+    }
+
+.btn-primary {
+    background-color: #007EA7 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #006485 !important;
+    }
