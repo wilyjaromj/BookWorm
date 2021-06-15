@@ -18,6 +18,7 @@
     <div id="ratingSelect" style="display:none;">
         <strong>Rating</strong>
         <select name="rating" id="rating" class="form-control">
+            <option value="" selected>Pick a rating...</option>
             <option value="1">1 Star</option>
             <option value="2">2 Stars</option>
             <option value="3">3 Stars</option>
@@ -32,6 +33,7 @@
     </div>
     
     <br /><br />
+    <div class="alert alert-danger" style="display:none;" id="message"></div>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
 
@@ -39,6 +41,12 @@
     <partial name="_ValidationScriptsPartial" />
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            if ('@ViewBag.Message') {
+                $('#message').html('@ViewBag.Message').show().delay(5000).fadeOut(400);
+            }
+        });
+
         $('input[name="type"]').on('change', function () {
             if ($('input[name="type"]:checked').val() === '2') {
                 $('#textSearch').hide();

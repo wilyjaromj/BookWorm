@@ -113,14 +113,17 @@ namespace BookWorm.Web.Controllers
         [HttpGet]
         public IActionResult Search()
         {
+            ViewBag.Message = TempData["message"];
             return View();
         }
 
         [HttpGet]
-        public IActionResult SearchResults(string searchParameter, int rating, SearchTypes type)
+        public IActionResult SearchResults(string searchParameter, int? rating, SearchTypes type)
         {
-            if (string.IsNullOrWhiteSpace(searchParameter))
+            if ((type != SearchTypes.Rating && string.IsNullOrWhiteSpace(searchParameter))
+                || (type == SearchTypes.Rating && !rating.HasValue))
             {
+                TempData["message"] = "Please select a search type and either enter a search parameter or select a rating";
                 return RedirectToAction("Search");
             }
 
@@ -134,7 +137,7 @@ namespace BookWorm.Web.Controllers
                     results = bookRepository.Find(b => b.Author.Contains(searchParameter));
                     break;
                 case SearchTypes.Rating:
-                    results = bookRepository.Find(b => b.Rating == rating);
+                    results = bookRepository.Find(b => b.Rating == rating.Value);
                     break;
                 case SearchTypes.Series:
                     results = bookRepository.Find(b => b.Series.Contains(searchParameter));
