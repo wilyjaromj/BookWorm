@@ -19,7 +19,10 @@ BUT, I didn;t neglect the requirements, I just used that first to get the site u
 switched it over to using NHibernate. I use DI in the startup.cs file, right now the line of code to use EF
 is commented out and the NHibernate code is what is being used.
 
-Fifth, I had fun putting this together. There are several things I would do differently if I had more time and
+Fifth, I didn't add all of the files in the bin folder to my zip file to cut down on its size, I figured
+you wouldn't need it to get it up and running. I apologize if that made it more difficult.
+
+Sixth, I had fun putting this together. There are several things I would do differently if I had more time and
 this was an application that was gonna be used heavily. But I did try to make it look nice and it meets all of
 the requirements. I hope you enjoy it!
 
