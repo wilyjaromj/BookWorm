@@ -21,7 +21,7 @@ namespace BookWorm.Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var model = bookRepository.All();
+            var model = bookRepository.All().OrderBy(b => b.Title);
             return View(model);
         }
 

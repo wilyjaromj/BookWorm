@@ -7,4 +7,24 @@
 <h1>My Library</h1>
 <hr />
 
-<partial name="_BookTable" model="Model" />
+<div class="bookshelf">
+    @foreach (var book in Model)
+    {
+        string base64;
+        var imgSrc = "/images/placeholder.png";
+        if (book.CoverArt != null)
+        {
+            base64 = Convert.ToBase64String(book.CoverArt);
+            imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+        }
+        <div class="row mx-0 justify-content-center book-section">
+            <a asp-controller="Home" asp-action="Book" asp-route-id="@book.Id">
+                <div class="row mx-0 justify-content-center">
+                    <img src="@imgSrc" height="200" />
+                </div>
+                <strong>@book.Title</strong>
+            </a>
+        </div>
+    }
+</div>
+@*<partial name="_BookTable" model="Model" />*@
